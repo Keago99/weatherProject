@@ -1,0 +1,17 @@
+#heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    background-color: #337def !important;
+    color: #fcc729 !important;
+}
+
+#overallWeatherType, #overallTemp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+}
