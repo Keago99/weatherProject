@@ -5,17 +5,23 @@ const insertTempC = document.getElementById("insertTempC");
 const weatherButton = document.getElementById("weatherButton");
 
 function callWeather(){
+    try{
         fetch(apiURL, {mode: 'cors'})
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(response){
-        console.log(response);
-        const weatherType = (response.current.condition.text);
-        const weatherTempC = (response.current.feelslike_c);
-        insertWeather.innerHTML+= weatherType;
-        insertTempC.innerHTML+= weatherTempC;
-    });
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(response){
+            console.log(response);
+            const weatherType = (response.current.condition.text);
+            const weatherTempC = (response.current.feelslike_c);
+            insertWeather.innerHTML= weatherType;
+            insertTempC.innerHTML= weatherTempC;
+        })
+    }
+    catch{
+        console.error("didn't work");
+    }
+
 }
 
 weatherButton.addEventListener("click", () => {
