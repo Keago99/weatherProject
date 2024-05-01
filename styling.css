@@ -9,9 +9,12 @@ body{
     color: #fcc729 !important;
 }
 
-#overallWeatherType, #overallTemp{
+#overallWeatherType, #overallTemp, #checkerForm{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 50px;
 }
+
+
+
