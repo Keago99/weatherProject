@@ -1,20 +1,25 @@
+
+body, html{
+    background-color: #337def !important;
+    color: #fcc729 !important;
+    height: 100%;
+}
+
+
 #heading{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-body{
-    background-color: #337def !important;
-    color: #fcc729 !important;
-}
-
-#overallWeatherType, #overallTemp, #checkerForm{
+#overallWeatherType, #overallTemp, #checkerForm, #location{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 50px;
 }
 
-
+#insertWeather, #insertTempC, #insertLocation{
+    margin-left: 10px;
+}
 
