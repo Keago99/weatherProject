@@ -4,7 +4,34 @@ const insertWeather = document.getElementById("insertWeather");
 const insertTempC = document.getElementById("insertTempC");
 const weatherButton = document.getElementById("weatherButton");
 const insertLocation = document.getElementById("insertLocation");
+const picture = document.getElementById("weatherPic");
 var newAPIURL = "";
+
+function decidePicture(){
+    switch (insertWeather.innerText){
+        default:
+            console.log("normal")
+            break;
+        case "Clear":
+            picture.src = "clear-sky.png";
+            break;
+        case "Partly cloudy":
+            picture.src = "clear-sky.png";
+            break;
+        case "Cloudy":
+            picture.src = "clouds.png";
+            break;
+        case "Sunny":
+            picture.src = "sun.png";
+            break;
+        case "Light rain":
+            picture.src = "rainy-day.png";
+            break;
+        case "Rain":
+            picture.src = "rainy-day.png";
+            break;
+    }
+}
 
 function callWeather(){
 
@@ -21,7 +48,7 @@ function callWeather(){
         insertWeather.innerHTML= weatherType;
         insertTempC.innerHTML= weatherTempC;
         insertLocation.innerHTML = locationName;
-
+        decidePicture();
     })
     .catch(function(err){
         alert("the error iz: " + err);
@@ -41,6 +68,8 @@ function amendCall(){
         newAPIURL = (apiURL + locationText);
     }
 }
+
+
 
 weatherButton.addEventListener("click", () => {
     amendCall();
